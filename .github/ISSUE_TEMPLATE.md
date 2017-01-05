@@ -1,6 +1,7 @@
 Choose one of the templates below and delete the latter. (delete this line)
 
 Features: (delete this line)
+
 **Feature description:**
 
 
@@ -10,7 +11,9 @@ Features: (delete this line)
 **Additional notes:**
 
 ------------------------------------ (delete this line)
+
 BUGS: (delete this line)
+
 **Issue description:**
 
 
