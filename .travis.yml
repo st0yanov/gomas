@@ -10,7 +10,7 @@ before_install:
   - go get -v github.com/golang/lint/golint
 
 script:
-  - ./pre-commit
+  - ./scripts/pre-commit.sh
   - go test -cpu=1,2 -v -race ./...
 
 notifications:
