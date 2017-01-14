@@ -30,8 +30,8 @@ else
 fi
 echo "------------------------------------------\n"
 
-printf >&2 'Running "go test -v ./..." ...\n\n'
-go test -v ./...
+printf >&2 'Running "go test -v -race ./..." ...\n\n'
+go test -v -race ./...
 if [ $? -eq 0 ]; then
   printf >&2 '\nAll tests passed successfully.\n'
 else
