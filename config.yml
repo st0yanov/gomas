@@ -1,9 +1,19 @@
+debug: true
+
 db:
+  driver: sqlite # Choose one of the following driver options.
+
+  # Database Drivers Configuration
   mysql:
     host: localhost
     user: root
     pass:
     port: 3306
+
+  postgres:
+    host: localhost
+    user: pg
+    pass:
 
   sqlite:
     filepath: /tmp/Gomas.db
