@@ -2,6 +2,7 @@ package utilities
 
 import (
 	"errors"
+	"testing"
 )
 
 func ExampleCheckError_withError() {
@@ -16,14 +17,12 @@ func ExampleCheckError_withoutError() {
 	// Output:
 }
 
-func ExampleExitOnError() {
+func TestPanicOnError(t *testing.T) {
 	err := errors.New("A sample error")
-	ExitOnError(&err)
-	// Output: A critical error occurred: A sample error
+	AssertPanic(t, func() { PanicOnError(&err) })
 }
 
-func ExampleExitOnError_withoutError() {
+func TestPanicOnError_withoutError(t *testing.T) {
 	var err error
-	ExitOnError(&err)
-	// Output:
+	AssertNoPanic(t, func() { PanicOnError(&err) })
 }

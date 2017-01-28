@@ -11,10 +11,10 @@ import (
 // Listen starts the Master Server.
 func Listen() {
 	ServerAddr, err := net.ResolveUDPAddr("udp", cmd.ServerIP+":"+cmd.ServerPort)
-	utilities.ExitOnError(&err)
+	utilities.PanicOnError(&err)
 
 	ServerConn, err := net.ListenUDP("udp", ServerAddr)
-	utilities.ExitOnError(&err)
+	utilities.PanicOnError(&err)
 
 	defer ServerConn.Close()
 

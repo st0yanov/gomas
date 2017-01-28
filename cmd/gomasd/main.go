@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	cmd.ConfigSetup()
 	cmd.FlagArguments()
 	server.Listen()
 }
