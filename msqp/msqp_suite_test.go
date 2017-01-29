@@ -1,4 +1,4 @@
-package query_test
+package msqp_test
 
 import (
 	. "github.com/onsi/ginkgo"

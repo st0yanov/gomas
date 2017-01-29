@@ -13,11 +13,15 @@ var (
 
 	// ServerPort contains the port used by the server.
 	ServerPort string
+
+	// DBCommand contains the db command to be executed on server start.
+	DBCommand string
 )
 
 func init() {
 	flag.StringVar(&ServerIP, "ip", "127.0.0.1", "The IP address the server will listen on.")
 	flag.StringVar(&ServerPort, "port", "27010", "The port the server will use.")
+	flag.StringVar(&DBCommand, "db", "", "The db command to be executed by the server on start.")
 }
 
 // ConfigSetup sets up Viper for easier configuration management.
