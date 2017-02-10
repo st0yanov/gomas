@@ -1,7 +1,8 @@
-package utilities
+package utilities_test
 
 import (
 	"errors"
+	. "github.com/veskoy/gomas/utilities"
 	"testing"
 )
 

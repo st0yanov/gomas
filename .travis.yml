@@ -6,11 +6,19 @@ go:
   - 1.7.x
   - master
 
-before_install:
-  - go get -v github.com/golang/lint/golint
+install:
+    - go get -v github.com/golang/lint/golint
+    - go get -v github.com/onsi/ginkgo/ginkgo
+    - go get -v github.com/onsi/gomega
+    - go get -v -t ./...
+    - export PATH=$PATH:$HOME/gopath/bin
 
 script:
   - ./scripts/pre-commit.sh
+  - gofmt -l .
+  - golint ./...
+  - go tool vet ./
+  - ginkgo -r --randomizeAllSpecs --randomizeSuites --failOnPending --cover --trace --race --compilers=2
 
 notifications:
   email: false

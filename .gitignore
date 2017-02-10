@@ -32,3 +32,5 @@ _testmain.go
 
 # External packages folder
 vendor/
+
+*.coverprofile
