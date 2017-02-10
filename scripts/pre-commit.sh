@@ -31,7 +31,7 @@ fi
 echo "------------------------------------------\n"
 
 printf >&2 'Running "go test -v -race ./..." ...\n\n'
-go test -v -race ./...
+ginkgo -r --randomizeAllSpecs --randomizeSuites --failOnPending --cover --trace --race --compilers=4
 if [ $? -eq 0 ]; then
   printf >&2 '\nAll tests passed successfully.\n'
 else

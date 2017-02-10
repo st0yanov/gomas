@@ -1,14 +1,18 @@
-package db
+package db_test
 
 import (
-	"testing"
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
+	. "github.com/veskoy/gomas/db"
 )
 
-func TestOpen(t *testing.T) {
-	db, err := Open()
-	defer db.Close()
+var _ = Describe("Db", func() {
 
-	if err != nil {
-		t.Errorf("Could not connect to database server.")
-	}
-}
+	It("opens a database connection", func() {
+		db, err := Open()
+		defer db.Close()
+
+		Expect(err).To(BeNil())
+	})
+
+})
