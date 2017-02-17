@@ -1,0 +1,14 @@
+{{ define "GameServerUpdate" }}
+    {{ template "Header" . }}
+        {{ template "Menu" . }}
+
+        <div class="ui container">
+            {{ if .success }}
+            <div class="ui success message">
+                <div class="header">Success</div>
+                <p>You have successfully updated the game server.</p>
+            </div>
+            {{ end }}
+        </div>
+    {{ template "Footer" . }}
+{{ end }}

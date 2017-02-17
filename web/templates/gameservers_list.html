@@ -1,0 +1,34 @@
+{{ define "GameServerList" }}
+    {{ template "Header" . }}
+        {{ template "Menu" . }}
+
+        <div class="ui container">
+            <table class="ui celled table">
+                <thead>
+                    <tr class="center aligned">
+                        <th>#</th>
+                        <th>Hostname</th>
+                        <th>IP</th>
+                        <th>Port</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="center aligned">
+                    {{ range .game_server_list_entries }}
+                    <tr>
+                        <td>{{ .ID }}</td>
+                        <td>{{ .Hostname }}</td>
+                        <td>{{ .IP }}</td>
+                        <td>{{ .Port }}</td>
+                        <td>
+                            <a class="ui icon button" href="/gameservers/{{ .ID }}"><i class="unhide icon"></i></a>
+                            <a class="ui icon button" href="/gameservers/{{ .ID }}/edit"><i class="edit icon"></i></a>
+                            <a class="ui icon button" href="/gameservers/{{ .ID }}/delete"><i class="delete icon"></i></a>
+                        </td>
+                    </tr>
+                    {{ end }}
+                </tbody>
+            </table>
+        </div>
+    {{ template "Footer" . }}
+{{ end }}

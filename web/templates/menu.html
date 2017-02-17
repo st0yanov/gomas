@@ -1,0 +1,18 @@
+{{ define "Menu" }}
+<div class="ui labeled icon menu">
+    <div class="ui container">
+        <a class="{{ if .homepage }} active {{ end }} item" href="/">
+            <i class="dashboard icon"></i>
+            Dashboard
+        </a>
+        <a class="{{ if .gameservers_list }} active {{ end }} item" href="/gameservers">
+            <i class="server icon"></i>
+            Game Servers
+        </a>
+        <a class="{{ if .gameservers_new }} active {{ end }} item" href="/gameservers/new">
+            <i class="upload icon"></i>
+            Add Server
+        </a>
+    </div>
+</div>
+{{ end }}
