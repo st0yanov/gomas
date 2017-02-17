@@ -1,0 +1,14 @@
+{{ define "GameServerCreate" }}
+    {{ template "Header" . }}
+        {{ template "Menu" . }}
+
+        <div class="ui container">
+            {{ if .success }}
+            <div class="ui success message">
+                <div class="header">Success</div>
+                <p>You have successfully added a new gameserver to the Master Server.</p>
+            </div>
+            {{ end }}
+        </div>
+    {{ template "Footer" . }}
+{{ end }}

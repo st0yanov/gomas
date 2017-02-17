@@ -1,0 +1,24 @@
+{{ define "GameServerShow" }}
+    {{ template "Header" . }}
+        {{ template "Menu" . }}
+
+        <div class="ui container">
+            {{ if .noEntry }}
+            <div class="ui error message">
+                <div class="header">Error</div>
+                <p>We couldn't find a game server with the provided ID.</p>
+            </div>
+            {{ else }}
+            <div class="ui container">
+                <b>ID: </b> {{ .gameServer.ID }}<br>
+                <b>IP: </b> {{ .gameServer.IP }}<br>
+                <b>Port: </b> {{ .gameServer.Port }}<br>
+                <b>Hostname: </b> {{ .gameServer.GameServerData.Hostname }}<br>
+
+                <br><br>
+                <b>Other fields coming soon...</b>
+            </div>
+            {{ end }}
+        </div>
+    {{ template "Footer" . }}
+{{ end }}

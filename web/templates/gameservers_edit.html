@@ -1,0 +1,38 @@
+{{ define "GameServerEdit" }}
+    {{ template "Header" . }}
+        {{ template "Menu" . }}
+
+        <div class="ui container">
+            {{ if .noEntry }}
+            <div class="ui error message">
+                <div class="header">Error</div>
+                <p>We couldn't find a game server with the provided ID.</p>
+            </div>
+            {{ else }}
+
+            {{ if .errors }}
+            <div class="ui error message">
+                <div class="header">Error</div>
+                <p>Please fix the errors shown below and try again.</p>
+            </div>
+            {{ end }}
+
+            <form method="post" action="/gameservers/{{ .gameServer.ID }}/update">
+                <div class="ui large form">
+                    <div class="two fields">
+                        <div class="required field {{ if .errors.ip }} error {{ end }}">
+                            <label>IP</label>
+                            <input type="text" name="ip" placeholder="Enter the gameserver's IP address..." value="{{ if .values.ip }} {{ .values.ip }} {{ else }} {{ .gameServer.IP }} {{ end }}">
+                        </div>
+                        <div class="required field {{ if .errors.port }} error {{ end }}">
+                            <label>Port</label>
+                            <input type="text" name="port" placeholder="Enter the gameserver's port..." value="{{ if .values.port }} {{ .values.port }} {{ else }} {{ .gameServer.Port }} {{ end }}">
+                        </div>
+                    </div>
+                    <input type="submit" class="ui submit button" value="Edit Server">
+                </div>
+            </form>
+            {{ end }}
+        </div>
+    {{ template "Footer" . }}
+{{ end }}
